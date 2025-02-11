@@ -51,3 +51,7 @@ input{
     border:1px solid #dcdcdc;
     box-shadow: none;
 }
+
+h2{
+    font-family: sans-serif;
+}

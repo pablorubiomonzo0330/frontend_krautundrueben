@@ -4,19 +4,23 @@ import {useEffect, useState} from "react";
 import Rezepten from "./components/Rezepten.tsx"
 import Zutaten from "./components/Zutaten.tsx";
 import Zutat from "./components/Zutat.tsx"
+import HeroBanner from "./components/HeroBanner.tsx";
 function App() {
 
+    const [showPage, setShowPage] = useState("Home")
+
     useEffect(() => {
-        setShowPage("")
+        setShowPage("Home")
     }, [])
 
-    const [showPage, setShowPage] = useState("false")
+    console.log(showPage)
     return (
         <>
-            <div>
+            <div style={{marginBottom: "50px"}}>
                 <Navbar setShowPage={setShowPage}/>
             </div>
             <div>
+                {showPage == "Home" && <HeroBanner/>}
                 {showPage == "Rezepten" && <Rezepten />}
                 {showPage == "Zutaten" && <Zutaten />}
                 {showPage == "Zutat" && <Zutat />}

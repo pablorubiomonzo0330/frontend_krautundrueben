@@ -1,5 +1,5 @@
 import {Link} from "react-router-dom";
-
+import Logo from "../assets/Kraut_und_Rueben.png"
 interface NavbarProps {
     setShowRezepten?: (value: (((prevState: boolean) => boolean) | boolean)) => void,
     setShowPage?: (value: (((prevState: string) => string) | string)) => void
@@ -26,7 +26,8 @@ function Navbar({setShowPage}: NavbarProps) {
         <>
             <div style={{display: "flex", alignItems: "center", justifyContent: "space-around"}}>
 
-                <div style={{left: "0px", marginLeft: "30px"}}>
+                <div style={{display: "flex", gap: "40px", alignItems: "center", left: "0px", marginLeft: "30px"}}>
+                    <img style={{width: "150px", height: "70px"}}src={Logo} alt="Logo" />
                     <h1>KRAUT UND RUEBEN</h1>
                 </div>
 
