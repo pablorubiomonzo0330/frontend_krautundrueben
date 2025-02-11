@@ -2,11 +2,17 @@ import {Rezept, Zutat} from "../models/models.ts"
 import {v4 as uuidv4} from 'uuid'
 import {useState, useEffect} from "react";
 import axios, {AxiosResponse} from "axios";
+import { IoMdAddCircle } from "react-icons/io";
 
 
 interface CardsProps{
     element: Zutat | Rezept
 }
+
+const API_Keys = [
+    'FPSX9c4106e4c28741d1b96ed3345d8fcbaa',
+    'FPSX55a0f8de4bc949329febd921e3703ba1'
+]
 
 function Card({element}: CardsProps) {
     const [image, setImage] = useState("")
@@ -24,7 +30,7 @@ function Card({element}: CardsProps) {
                 if (url) {
                     const res: AxiosResponse = await axios.get(url, {
                         headers: {
-                            'x-freepik-api-key': 'FPSX9c4106e4c28741d1b96ed3345d8fcbaa',
+                            'x-freepik-api-key': 'FPSX55a0f8de4bc949329febd921e3703ba1',
                             'Access-Control-Allow-Origin': 'http://localhost:5173'
                         }
                     });
@@ -39,7 +45,7 @@ function Card({element}: CardsProps) {
             }
         };
 
-        // fetchImage();
+         // fetchImage();
     }, [element]);
 
     const renderInformation = () => {
@@ -77,11 +83,12 @@ function Card({element}: CardsProps) {
 
 
     return (
-                <div style={{width: "80%", padding: "15px", boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px", borderRadius: "5px", display: "flex", flexDirection: "column"}}>
+                <div style={{position: "relative", width: "80%", padding: "15px", boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px", borderRadius: "5px", display: "flex", flexDirection: "column"}}>
                     <img style={{margin: "5px", width: "auto", height: "150px", backgroundColor: "black"}} src={image}/>
                     <div>
                         {renderInformation()}
                     </div>
+                    <IoMdAddCircle style={{ position: 'absolute', bottom: '16px', right: '16px', fontSize: '24px', color: 'black', cursor: 'pointer' }}/>
                 </div>
     )
 }

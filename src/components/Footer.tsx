@@ -10,8 +10,8 @@ const Footer = () => {
             bottom: 0,
             width: '100%'
         }}>
-            <p>&copy; 2023 Dein Unternehmen. Alle Rechte vorbehalten.</p>
-            <p>Kontakt: info@deinunternehmen.com</p>
+            <p>&copy; 2023 Kraut und Rüben. Alle Rechte vorbehalten.</p>
+            <p>Kontakt: info@krautundrueben.de</p>
         </footer>
     );
 }
