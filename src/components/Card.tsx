@@ -39,7 +39,7 @@ function Card({element}: CardsProps) {
             }
         };
 
-        fetchImage();
+        // fetchImage();
     }, [element]);
 
     const renderInformation = () => {

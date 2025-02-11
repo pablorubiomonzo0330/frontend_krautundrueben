@@ -7,25 +7,6 @@ function Rezepten() {
     const [typeOfSearch, setTypeOfSearch] = useState("")
     const [showSearchBar, setShowSearchBar] = useState(false)
     const [rezepten, setRezepten] = useState([])
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                await axios.get('http://localhost:8080/rezepte', {
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                }).then(res => {
-                    setRezepten(res.data)
-                })
-            } catch (e){
-                console.log(e)
-            }
-        }
-
-        fetchData().then(() => true)
-    }, [])
-
     const REZEPTEN_MOCKS = [
         {
             "id": 1,
@@ -79,6 +60,25 @@ function Rezepten() {
             ]
         }
     ];
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                await axios.get('http://localhost:8080/rezepte', {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }).then(res => {
+                    setRezepten(res.data)
+                })
+            } catch (e){
+                console.log(e)
+            }
+        }
+
+        fetchData().then(() => true)
+    }, [rezepten])
+
+
 
     const handleClickButton = (typeOfSearchSearchBar: string): void => {
         if (typeOfSearch !== typeOfSearchSearchBar){
