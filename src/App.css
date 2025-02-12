@@ -55,3 +55,12 @@ input{
 h2{
     font-family: sans-serif;
 }
+
+li>a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color: darkseagreen;
+}

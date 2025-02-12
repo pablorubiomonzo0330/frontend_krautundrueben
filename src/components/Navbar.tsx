@@ -18,7 +18,7 @@ function Navbar({setShowPage}: NavbarProps) {
         }
     }
     const renderNavbar = NAVBAR_ELEMENTS.map((element) => {
-        return <li key={element.label} onClick={() => handleSetRezepten(element.label)} style={{marginRight: "75px"}}><Link style={{textDecoration: "none", color:"black"}}to={element.path}>{element.label}</Link></li>
+        return <li key={element.label} onClick={() => handleSetRezepten(element.label)} style={{marginRight: "75px"}}><Link to={element.path}>{element.label}</Link></li>
     })
 
 
